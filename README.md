@@ -1,7 +1,7 @@
 log-see
 =========
 
-Web log viewer for log4j with spring amqp appender 
+Web lLog viewer for log4j with spring amqp appender 
 
 Installation
 --------------
@@ -19,6 +19,11 @@ URL to access app:
 ```sh
 http://0.0.0.0:8080/logsee/
 ```
+
+Screenshot
+
+[LogSee-1](http://i.imgur.com/GCncUQi.png?1)
+
 
 
 License
