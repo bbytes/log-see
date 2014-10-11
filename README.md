@@ -21,14 +21,8 @@ http://0.0.0.0:8080/logsee/
 ```
 
 Screenshot
+--------------
 
 [LogSee-1](http://i.imgur.com/GCncUQi.png?1)
-
-
-
-License
-----
-
-MIT
 
 
