@@ -1,0 +1,63 @@
+<!doctype html>
+<title>Log Terminal</title>
+
+<style>
+html {
+	background: #555;
+}
+
+h1 {
+	margin-bottom: 20px;
+	font: 20px/1.5 sans-serif;
+}
+
+/*
+  .terminal {
+    float: left;
+    border: #000 solid 5px;
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 11px;
+    color: #f0f0f0;
+    background: #000;
+  }
+
+  .terminal-cursor {
+    color: #000;
+    background: #f0f0f0;
+  }
+*/
+</style>
+<h1>Log-See App</h1>
+<script type="text/javascript" src="resources/sockjs.js" /></script>
+<script type="text/javascript" src="resources/stomp.js" /></script>
+<script type="text/javascript" src="resources/term.js" /></script>
+
+<script>
+;(function() {
+	  window.onload = function() {
+   
+		  var socket = new SockJS('/logsee/logview');
+		  var client = Stomp.over(socket);
+
+		  client.connect('guest', 'guest', function(frame) {
+			console.log('Connected: ' + frame);
+			
+			 var term = new Terminal({
+			        cols: 80,
+			        rows: 24,
+			        useStyle: true,
+			        screenKeys: true,
+			        cursorBlink: false
+			      });
+			term.open(document.body);
+			
+		    client.subscribe("/topic/log.logsee", function(message) {
+		    	term.write(message.body);
+		    });
+
+		  });
+      
+    };
+
+}).call(this);
+</script>
