@@ -30,7 +30,7 @@ Log4j Appender xml
 --------------
 
 ```sh
-<appender name="amqp"
+	<appender name="amqp"
 		class="org.springframework.amqp.rabbit.log4j.AmqpAppender">
 		<param name="host" value="127.0.0.1" />
 		<param name="port" value="5672" />
