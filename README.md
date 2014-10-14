@@ -1,7 +1,7 @@
 log-see
 =========
 
-Web lLog viewer for log4j with spring amqp appender 
+Web Log viewer for log4j with spring amqp appender 
 
 Installation
 --------------
