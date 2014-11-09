@@ -48,6 +48,10 @@ Log4j Appender xml
 			<param name="ConversionPattern" value="%-5p %c{1} - %m%n" />
 		</layout>
 	</appender>
+	
+    <logger name="org.springframework.amqp">
+              <level value="OFF"/>
+    </logger>
 ```
 
 Messaging Layer
